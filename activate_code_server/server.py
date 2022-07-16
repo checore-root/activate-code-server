@@ -1,9 +1,9 @@
-from flask import Flask, jsonify
+from flask import Flask
 from gevent.pywsgi import WSGIServer
 
 class app_server:
     def __init__(self, *args, **kwargs):
-        self.port = kwargs.get('port', 7000)
+        self.port = kwargs.get('port', 8000)
         self.host = kwargs.get('host', 'localhost')
         self.app = None
         self.server = None
