@@ -10,4 +10,3 @@ server = activate_code_server.app_server(
 if __name__ == "__main__":
     server.setup_blueprint(activate_code_server.app)
     server.run()
-    
