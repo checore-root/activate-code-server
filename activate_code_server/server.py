@@ -21,5 +21,5 @@ class app_server:
             self.app)
 
     def run(self):
-        self.setup_server
+        self.setup_server()
         self.server.serve_forever()
