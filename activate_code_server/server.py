@@ -5,7 +5,6 @@ class app_server:
     def __init__(self, *args, **kwargs):
         self.port = kwargs.get('port', 7000)
         self.host = kwargs.get('host', 'localhost')
-        self.debug = kwargs.get('debug', False)
         self.app = None
         self.server = None
         self.setup_app()
@@ -17,10 +16,10 @@ class app_server:
         self.app.register_blueprint(blueprint)
         
     def setup_server(self):
-        self.app.debug = True
         self.server = WSGIServer(
             (self.host, self.port),
             self.app)
 
     def run(self):
+        self.setup_server
         self.server.serve_forever()
